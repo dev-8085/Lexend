@@ -1,9 +1,10 @@
 import React from 'react';
 import hero from '../assets/hero-two.png'; 
+
 const Banner = () => {
   return (
-    <div className="min-h-screen bg-[#f5f5f3] flex items-center justify-center font-['Inter']">
-      <div className="max-w-6xl mx-auto p-6">
+    <section className="min-h-screen w-full bg-[#F6EEE9] flex items-center justify-center font-['Inter']">
+      <div className="max-w-6xl w-full mx-auto p-6">
         <div className="flex flex-col md:flex-row items-center">
           {/* Left Content */}
           <div className="md:w-1/2 mb-8 md:mb-0">
@@ -16,9 +17,10 @@ const Banner = () => {
               <input
                 type="email"
                 placeholder="Your email address"
+                aria-label="Enter your email address"
                 className="p-3 border border-gray-300 rounded-l-md w-full"
               />
-              <button className="bg-green-700 text-white p-3 rounded-r-md whitespace-nowrap reveal">
+              <button className="bg-green-700 text-white p-3 rounded-r-md whitespace-nowrap hover:bg-green-800 transition reveal">
                 Start free trial
               </button>
             </div>
@@ -29,7 +31,7 @@ const Banner = () => {
           <div className="col-12 lg:col-6 xl:col-7 reveal">
             <img
               src={hero}
-              alt="Team of people smiling"
+              alt="Illustration of a team collaborating"
             />
           </div>
         </div>
@@ -43,15 +45,15 @@ const Banner = () => {
             { name: 'Capsule', icon: 'fas fa-capsules' },
             { name: 'Layers', icon: 'fas fa-layer-group' },
             { name: 'Polymath', icon: 'fas fa-brain' },
-          ].map((item, index) => (
-            <div key={index} className="flex items-center space-x-2 text-gray-600">
+          ].map((item) => (
+            <div key={item.name} className="flex items-center space-x-2 text-gray-600">
               <i className={`${item.icon} text-gray-700`}></i>
               <span>{item.name}</span>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
