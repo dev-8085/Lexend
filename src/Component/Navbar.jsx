@@ -9,23 +9,25 @@ const Navbar = () => {
   return (
     // Full-width wrapper with bg color
     <div className="w-full bg-[#F6EEE9]">
-      <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-4 xl:justify-around">
+      <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-28 xl:justify-around pt-2">
         {/* Logo and Nav */}
         <div className="uc-navbar-left flex gap-16">
           <img src={Logo} alt="Company Logo" />
 
-          <div className="uc-navbar-nav hidden lg:flex items-center gap-6 [&>*]:flex [&>*]:items-center [&>*]:gap-1 [&>*]:font-semibold text-base xl:gap-10">
-            <Link to="/features">
-              Features <IoIosArrowDown />
+          <div className="uc-navbar-nav hidden lg:flex items-center gap-4 [&>*]:flex [&>*]:items-center [&>*]:font-semibold text-base xl:gap-10 ">
+            <Link to className="font-light">
+              Features 
             </Link>
-            <Link to="/products">
-              Products <IoIosArrowDown />
+            <Link to="/">
+              Pricing
             </Link>
-            <Link to="/resources">
-              Resources <IoIosArrowDown />
+            <Link to="/">
+              Insights
             </Link>
-            <Link to="/pricing">Pricing</Link>
-            <Link to="/more">More</Link>
+            <Link to="About">About</Link>
+            <Link to="About">Contact</Link>
+            <Link to="/more">More<IoIosArrowDown /></Link>
+
           </div>
         </div>
 
@@ -46,7 +48,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <FaGlobe className="text-gray-800" />
-              <button className="text-gray-800 hover:text-gray-600 flex items-center">
+              <button className="row child-cols justify-center lg:justify-between items-center gy-4 sm:gy-6 gx-0">
                 En <FaChevronDown className="ml-1" />
               </button>
             </div>

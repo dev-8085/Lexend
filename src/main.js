@@ -1,17 +1,24 @@
-function revealOnScroll() {
-    const reveals = document.querySelectorAll(".reveal");
-  
-    reveals.forEach((el) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      const revealPoint = 150;
-  
-      if (elementTop < windowHeight - revealPoint) {
-        el.classList.add("active");
-      } else {
-        el.classList.remove("active");
-      }
-    });
-  }
-  
-  window.addEventListener("scroll", revealOnScroll);
+function revealSequentially() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add("active");
+    }, (index + 1) * 1000); // 1s, 2s, 3s, ...
+  });
+}
+
+window.addEventListener("load", revealSequentially);
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.querySelector(".reveal-left")?.classList.add("active");
+  }, 1000);
+
+  setTimeout(() => {
+    document.querySelector(".reveal-right")?.classList.add("active");
+  }, 2000);
+
+  setTimeout(() => {
+    document.querySelector(".reveal-icons")?.classList.add("active");
+  }, 3000);
+});
