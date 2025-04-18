@@ -1,62 +1,90 @@
 import React from 'react';
 import hero from '../assets/hero-two.png'; 
+import brand01 from '../assets/brand01.svg';
+import brand02 from '../assets/brand02.svg';
+import brand03 from '../assets/brand03.svg';
+import brand04 from '../assets/brand04.svg';
+import brand05 from '../assets/brand05.svg';
+import brand06 from '../assets/brand06.svg';
+
 
 const Banner = () => {
   return (
-    <section className="bg-[#F6EEE9] section-outer panel py-6 xl:py-9 pt-9 lg:pt-10 bg-secondary ">
-      <div className="max-w-6xl w-full mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0">
+    <section className="bg-[#F6EEE9] section-outer panel py-6 xl:py-9 pt-9 lg:pt-10 bg-secondary">
+      <div className="max-w-7xl w-full mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 md:flex-row ">
 
-          {/* Left Content */}
-          <div className="vstack gap-2 mt-2 sm:mt-4 lg:mt-0 sm:text-center lg:text-start rtl:lg:text-end left-content reveal reveal-left">
-            <h2 className="fs-6 fw-bold text-primary dark:text-secondary reveal">CRM Tool Workflow</h2>
-            <h1 className="text-5xl font-bold text-gray-900 mb-4 reveal">Streamline your Tool Workflow.</h1>
-            <p className="text-lg text-gray-600 mb-6 reveal">
-              Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
-            </p>
-            <div className="flex items-center mb-2 w-full max-w-md reveal">
-              <input
-                type="email"
-                placeholder="Your email address"
-                aria-label="Enter your email address"
-                className="p-3 border border-gray-300 rounded-l-md w-full"
-              />
-              <button className="bg-green-700 text-white p-3 rounded-r-md whitespace-nowrap hover:bg-green-800 transition reveal">
-                Start free trial
-              </button>
-            </div>
-            <p className="text-sm text-gray-500 reveal ">No credit card required.</p>
-          </div>
+        <div className="py-12 sm:px-1 font-['Inter'] reveal reveal-left ">
+  <main className="max-w-xl mx-auto">
+    <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight  mb-3 reveal ">
+      CRM Tool Workflow
+    </h2>
+
+    <h1 className="font-extrabold text-[2.75rem] sm:text-[4.25rem] leading-[1.1] text-black mb-6 tracking-tight reveal">
+      Streamline your<br />Tool Workflow.
+    </h1>
+
+    <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl reveal">
+      Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
+    </p>
+
+    <form className="flex flex-col sm:flex-row gap-4 max-w-xl reveal">
+      <input
+        type="email"
+        placeholder="Your email address"
+        className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
+        required
+      />
+      <button
+        type="submit"
+        className="bg-[#0E614D] text-white font-medium text-base sm:text-lg rounded-md px-6 py-4 hover:bg-[#16503b] transition-colors"
+      >
+        Start free trial
+      </button>
+    </form>
+
+    <p className="text-gray-600 text-sm mt-4 reveal">No credit card required.</p>
+  </main>
+</div>
+
 
           {/* Right Images */}
-          <div className="col-12 lg:col-6 xl:col-7 right-image reveal reveal-right">
+          <div className="col-12 lg:col-2 xl:col-7 right-image reveal reveal-right flex justify-center items-center">
             <img
               src={hero}
               alt="Illustration of a team collaborating"
-              className='hero-scene panel rtl:me-6 rtl:ms-n6 reveal'
+              className='w-200 h-auto hero-scene panel rtl:me-6 rtl:ms-n6 reveal'
             />
           </div>
         </div>
-
-        {/* Bottom Icons */}
-        <div className="flex justify-center mt-12 flex-wrap gap-6 bottom-icons reveal reveal-icons">
-          {[
-            { name: 'Segment', icon: 'fas fa-segment' },
-            { name: 'Alt+Shift', icon: 'fas fa-shift' },
-            { name: 'Lightbox', icon: 'fas fa-lightbulb' },
-            { name: 'Capsule', icon: 'fas fa-capsules' },
-            { name: 'Layers', icon: 'fas fa-layer-group' },
-            { name: 'Polymath', icon: 'fas fa-brain' },
-          ].map((item) => (
-            <div key={item.name} className="flex items-center space-x-2 text-gray-600">
-              <i className={`${item.icon} text-gray-700`}></i>
-              <span>{item.name}</span>
-            </div>
-          ))}
-        </div>
+      </div> 
+{/* Bottom Icons */}
+<section className="brands panel overflow-hidden mt-4 sm:mt-6 lg:mt-8 opacity-50">
+  <div className="flex justify-center mt-12 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
+    {[
+      { icon: brand04 },
+      { icon: brand05 },
+      { icon: brand06 },
+      { icon: brand01 },
+      { icon: brand02 },
+      { icon: brand03 },
+    ].map((item, index) => (
+      <div key={index} className="flex items-center justify-center mx-6">
+        <img
+          src={item.icon}
+          alt={`brand-${index + 1}`}
+          className="h-20 w-[130px] object-contain transition-transform duration-300 hover:scale-110"
+        />
       </div>
+    ))}
+  </div>
+</section>
+
+
     </section>
   );
 };
 
 export default Banner;
+
+
