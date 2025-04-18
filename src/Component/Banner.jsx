@@ -14,7 +14,7 @@ const Banner = () => {
       <div className="max-w-7xl w-full mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 md:flex-row ">
 
-        <div className="py-12 sm:px-1 font-['Inter'] reveal reveal-left ">
+        <div className="py-20 sm:px-1 font-['Inter'] reveal reveal-left ">
   <main className="max-w-xl mx-auto">
     <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight  mb-3 reveal ">
       CRM Tool Workflow
@@ -59,15 +59,15 @@ const Banner = () => {
         </div>
       </div> 
 {/* Bottom Icons */}
-<section className="brands panel overflow-hidden mt-4 sm:mt-6 lg:mt-8 opacity-50">
-  <div className="flex justify-center mt-12 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
+<section className="brands panel overflow-hidden mt-4 sm:mt-6 lg:mt-8 opacity-50  py-6 xl:py-9 pt-9 lg:pt-10">
+  <div className="flex justify-center mt-3 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
     {[
-      { icon: brand04 },
-      { icon: brand05 },
-      { icon: brand06 },
       { icon: brand01 },
       { icon: brand02 },
       { icon: brand03 },
+      { icon: brand04 },
+      { icon: brand05 },
+      { icon: brand06 },
     ].map((item, index) => (
       <div key={index} className="flex items-center justify-center mx-6">
         <img

@@ -10,13 +10,13 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-[#F6EEE9]">
-      <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-6 md:px-12 xl:justify-around pt-5 relative">
+      <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-12 xl:justify-around pt-5 relative">
         {/* Left Section */}
-        <div className="uc-navbar-left flex gap-10 md:gap-16 items-center">
-          <img src={Logo} alt="Company Logo" className="w-auto h-auto" />
+        <div className="uc-navbar-left flex gap-6 sm:gap-10 md:gap-16 items-center">
+          <img src={Logo} alt="Company Logo" className="w-24 sm:w-28 md:w-32 h-auto object-contain" />
 
           {/* Desktop nav */}
-          <div className="uc-navbar-nav hidden lg:flex items-center gap-4 [&>*]:flex [&>*]:items-center [&>*]:font-semibold text-base xl:gap-12">
+          <div className="uc-navbar-nav hidden lg:flex items-center gap-2 sm:gap-4 md:gap-6 xl:gap-11 [&>*]:flex [&>*]:items-center [&>*]:font-semibold text-sm md:text-base">
             <Link to="/" className="font-light">Features</Link>
             <Link to="/">Pricing</Link>
             <Link to="/">Insights</Link>
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         {/* Right Section */}
-        <div className="uc-navbar-right flex items-center gap-4 lg:gap-7">
+        <div className="uc-navbar-right flex items-center gap-3 sm:gap-4 lg:gap-7">
           {/* Mobile Hamburger */}
           <RxHamburgerMenu
             size={23}
@@ -39,14 +39,14 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <ul className="hidden lg:flex">
-            <Link to="/demo" className="font-semibold text-base">
+            <Link to="/demo" className="font-semibold text-sm md:text-base">
               Request a demo
             </Link>
           </ul>
 
           <button
             type="button"
-            className="hidden lg:flex text-base font-semibold bg-[#12715B] text-white rounded-lg py-3 px-3 leading-none cursor-pointer hover:bg-opacity-90"
+            className="hidden lg:flex text-sm md:text-base font-semibold bg-[#12715B] text-white rounded-lg py-2 md:py-3 px-3 leading-none cursor-pointer hover:bg-opacity-90"
           >
             Start free trial
           </button>
@@ -54,7 +54,7 @@ const Navbar = () => {
           {/* Desktop language selector */}
           <div className="hidden sm:flex items-center space-x-2">
             <FaGlobe className="text-gray-800" />
-            <button className="flex items-center">
+            <button className="flex items-center text-sm md:text-base">
               En <FaChevronDown className="ml-1" />
             </button>
           </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <Link to="/demo" onClick={() => setMenuOpen(false)} className="font-semibold">Request a demo</Link>
             <button
               type="button"
-              className="text-base font-semibold bg-[#12715B] text-white rounded-lg py-2 px-4"
+              className="text-sm sm:text-base font-semibold bg-[#12715B] text-white rounded-lg py-2 px-4"
               onClick={() => setMenuOpen(false)}
             >
               Start free trial
@@ -80,7 +80,7 @@ const Navbar = () => {
             {/* Mobile language selector */}
             <div className="flex items-center space-x-2 mt-4">
               <FaGlobe className="text-gray-800" />
-              <button className="flex items-center">
+              <button className="flex items-center text-sm sm:text-base">
                 En <FaChevronDown className="ml-1" />
               </button>
             </div>
