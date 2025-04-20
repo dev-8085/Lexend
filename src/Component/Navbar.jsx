@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -7,9 +7,37 @@ import Logo from "../assets/logo.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Track scroll direction
+      setShowNavbar(currentScrollY < lastScrollY || currentScrollY <= 0);
+      setLastScrollY(currentScrollY);
+
+      // Detect if page has been scrolled at all
+      setIsScrolled(currentScrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <div className="w-full bg-[#F6EEE9]">
+    <div
+      className={`
+        w-full pb-4
+        transition-transform duration-300
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+        fixed top-0 left-0 z-50
+        ${isScrolled ? "bg-white shadow-md" : "bg-[#F6EEE9]"}
+      `}
+    >
       <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-12 xl:justify-around pt-5 relative">
         {/* Left Section */}
         <div className="uc-navbar-left flex gap-6 sm:gap-10 md:gap-16 items-center">
@@ -62,7 +90,7 @@ const Navbar = () => {
 
         {/* Mobile Dropdown */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-[#F6EEE9] px-6 py-4 flex flex-col gap-4 lg:hidden z-50">
+          <div className="absolute top-full left-0 w-full bg-white px-6 py-4 flex flex-col gap-4 lg:hidden z-50">
             <Link to="/" onClick={() => setMenuOpen(false)}>Features</Link>
             <Link to="/" onClick={() => setMenuOpen(false)}>Pricing</Link>
             <Link to="/" onClick={() => setMenuOpen(false)}>Insights</Link>

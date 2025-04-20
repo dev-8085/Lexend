@@ -19,7 +19,7 @@ import star2 from '../assets/star-2.svg';
 const Banner = () => {
   return (
     <div className="relative" style={{ backgroundColor: '#F6EEE9' }}>
-      <div className="absolute top-[12%] right-[15%] transform rotate-45 reveal">
+      <div className="absolute top-[7%] right-[15%] transform rotate-45 reveal">
       <img
         alt="star-2"
         data-uc-svg=""
@@ -40,7 +40,7 @@ const Banner = () => {
         src={Trophy}
       />
     </div>
-      <div className="absolute bottom-[15%] left-[30%] transform -translate-y-1/2">
+      <div className="absolute bottom-[7%] left-[30%] transform -translate-y-1/2">
       <img
         alt="icon-globe-dark"
         loading="lazy"
@@ -119,7 +119,7 @@ const Banner = () => {
       </div>
 
       <div className="max-w-7xl w-full mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0">
+        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-18">
           {/* Left Text */}
           <div className="py-20 sm:px-1 font-['Inter'] reveal reveal-left">
             <main className="max-w-xl mx-auto">
@@ -165,20 +165,21 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* Bottom Icons */}
-      <section className="brands panel overflow-hidden mt-4 sm:mt-6 lg:mt-8 opacity-50 py-6 xl:py-9 pt-9 lg:pt-10">
-        <div className="flex justify-center mt-3 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
-          {[brand01, brand02, brand03, brand04, brand05, brand06].map((icon, index) => (
-            <div key={index} className="flex items-center justify-center mx-6">
-              <img
-                src={icon}
-                alt={`brand-${index + 1}`}
-                className="h-20 w-[130px] object-contain transition-transform duration-300 hover:scale-110"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+    {/* Bottom Icons */}
+<section className="brands panel overflow-hidden opacity-50 py-6">
+  <div className="flex justify-center mb-20 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
+    {[brand01, brand02, brand03, brand04, brand05, brand06].map((icon, index) => (
+      <div key={index} className="flex items-center justify-center mx-6">
+        <img
+          src={icon}
+          alt={`brand-${index + 1}`}
+          className="h-20 w-[130px] object-contain transition-transform duration-300 hover:scale-110"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
     </div>
   );
 };

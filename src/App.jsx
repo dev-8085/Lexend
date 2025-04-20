@@ -6,8 +6,8 @@ import Navbar from './Component/Navbar'
 import Question from './Component/Question'
 import Client from './Component/client'
 import Gain from './Component/Gain' 
-import Footer from './Component/footer'
 import Getter from './Component/getter'
+import Footer from './Component/footer'
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
       <Question />
       <Client />
       <Gain />
-      <Footer/>
       <Getter />
+      <Footer/>
       
      
     </>
