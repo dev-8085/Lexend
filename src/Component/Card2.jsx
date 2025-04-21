@@ -43,7 +43,7 @@ const cards = [
 
 const Card2 = () => {
   return (
-    <section className="bg-[#F6EEE9] py-16 px-4">
+    <section className="bg-[#F6EEE9] py-28 px-4">
       <h2 className="text-center text-4xl md:text-5xl font-extrabold text-[#111827] mb-16 reveal">
         Prevent costly mistakes
       </h2>
@@ -81,7 +81,7 @@ const Card2 = () => {
       <div className="mt-12 text-center">
         <a
           href="#"
-          className="text-sm font-semibold text-[#17694a] inline-flex items-center space-x-1 hover:underline"
+          className="text-large font-semibold text-[#17694a] inline-flex items-center space-x-1 hover:underline"
         >
           <span className='4xl'>Discover all features</span>
           <svg

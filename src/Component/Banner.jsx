@@ -19,7 +19,7 @@ import star2 from '../assets/star-2.svg';
 const Banner = () => {
   return (
     <div className="relative" style={{ backgroundColor: '#F6EEE9' }}>
-      <div className="absolute top-[7%] right-[15%] transform rotate-45 reveal">
+      <div className="absolute top-[12%] right-[15%] transform rotate-45 reveal">
       <img
         alt="star-2"
         data-uc-svg=""
@@ -173,7 +173,7 @@ const Banner = () => {
         <img
           src={icon}
           alt={`brand-${index + 1}`}
-          className="h-20 w-[130px] object-contain transition-transform duration-300 hover:scale-110"
+          className="h-20 w-[130px] object-contain transition-transform duration-300 "
         />
       </div>
     ))}

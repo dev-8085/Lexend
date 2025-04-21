@@ -2,9 +2,9 @@ import React from "react";
 
 const Gain = () => {
   return (
-    <div className="bg-[#F6EEE9] p-10 reveal">
+    <div className="bg-[#F6EEE9] p-25 reveal">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">Gain valuable insights</h1>
+        <h1 className="text-5xl font-bold text-center mb-12">Gain valuable insights</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}

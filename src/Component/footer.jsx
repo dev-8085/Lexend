@@ -1,115 +1,129 @@
 import React from 'react';
 import { Linkedin, Facebook, Twitter, Instagram, Youtube, Globe } from 'lucide-react';
-import logo from '../assets/logo-mark.svg'
-import appstor from '../assets/appstore.svg'
-import playstore from '../assets/playstore.svg'
+import logo from '../assets/logo-mark.svg';
+import appstor from '../assets/appstore.svg';
+import playstore from '../assets/playstore.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-15">
-      <div className="container mx-auto px-50">
-        {/* Main content */}
-        <div className="mb-10">
-          <div className="flex flex-col md:flex-row">
-            {/* Left column with text and app buttons */}
-            <div className="md:w-1/4 mb-8 md:mb-0">
-              <img src={logo} alt="" />
-              <p className="text-gray-700 mb-6">
-                This powerful tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables.
-              </p>
-              <div className="space-y-2">
-                <div className="text-xs font-medium text-gray-500">GET IT ON</div>
-                <div className="flex space-x-2">
-                <img src={appstor} alt="" />
-                <img src={playstore} alt="" />
-                </div>
-              </div>
+    <footer className="bg-white pt-10">
+      <div className="max-w-7xl mx-auto px-5">
+        {/* Divider */}
+        <hr className="border-gray-200 mb-30" />
+
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row gap-16 pb-12">
+          {/* Left Side */}
+          <div className="md:w-1/3">
+            <img src={logo} alt="Logo" className="mb-4" />
+            <p className="text-gray-700 text-base leading-relaxed mb-6">
+              This powerfull tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables.
+            </p>
+            <div className="flex space-x-3">
+              <img src={playstore} alt="Play Store" className="h-10" />
+              <img src={appstor} alt="App Store" className="h-10" />
+            </div>
+          </div>
+
+          {/* Right Side - Links */}
+          <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-10">
+            {/* Column 1 */}
+            <div>
+              <h3 className="font-semibold text-base text-black mb-1">About</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Pricing</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Features</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Integrations</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Career</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Contact</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Contact v2</a></li>
+              </ul>
             </div>
 
-            {/* Right columns with navigation links */}
-            <div className="md:w-3/4 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {/* Column 1 */}
-              <div>
-                <h3 className="font-bold mb-4">About</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-700 text-sm">Pricing</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Features</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Integrations</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Career</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Contact</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Contact v2</a></li>
-                </ul>
-              </div>
+            {/* Column 2 */}
+            <div>
+              <h3 className="font-semibold text-base text-black mb-1">Shop</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="font-semibold text-base text-black mb-1"><a href="#">With sidebar</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Product detail</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Product detail v2</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Cart</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Checkout</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Order confirmation</a></li>
+              </ul>
+            </div>
 
-              {/* Column 2 */}
-              <div>
-                <h3 className="font-bold mb-4">Shop</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-700 text-sm">With sidebar</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Product detail</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Product detail v2</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Cart</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Checkout</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Order confirmation</a></li>
-                </ul>
-              </div>
+            {/* Column 3 */}
+            <div>
+              <h3 className="font-semibold text-base text-black mb-1">Request a demo</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Sign in</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Sign in v2</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Sign up</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Sign up v2</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Reset password</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Reset password v2</a></li>
+              </ul>
+            </div>
 
-              {/* Column 3 */}
-              <div>
-                <h3 className="font-bold mb-4">Request a demo</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-700 text-sm">Sign in</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Sign in v2</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Sign up</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Sign up v2</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Reset password</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Reset password v2</a></li>
-                </ul>
-              </div>
-
-              {/* Column 4 */}
-              <div>
-                <h3 className="font-bold mb-4">Blog</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-700 text-sm">Blog detail</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">FAQ</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">404</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Coming Soon</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Terms of service</a></li>
-                  <li><a href="#" className="text-gray-700 text-sm">Privacy policy</a></li>
-                </ul>
-              </div>
+            {/* Column 4 */}
+            <div>
+              <h3 className="font-semibold text-base text-black mb-1">Blog</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Blog detail</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">FAQ</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">404</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Coming Soon</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Terms of service</a></li>
+                <li className="font-semibold text-base text-black mb-1"><a href="#">Privacy policy</a></li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Divider line */}
-        <hr className="border-t border-gray-300 my-4" />
+        {/* Divider */}
+        <hr className="border-gray-200 my-6" />
 
-        {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-4">
-          <div className="mb-4 md:mb-0">
-            <p className="text-gray-700 text-sm">Lexend © 2025, All rights reserved.</p>
+        <div className="max-w-7xl mx-auto px-5">
+        <div className="flex flex-row justify-between items-center">
+          {/* Left - Copyright text */}
+          <div className='py-10'>
+            <p className="text-gray-400 text-large ">Lexend © 2025, All rights reserved.</p>
+            <a href="#" className="text-black-900 text-large ">Privacy notice</a>
+            <a href="#" className="text-gray-900 text-large px-4">Legal</a>
+            <a href="#" className="text-gray-900 text-large px-2">Cookie settings</a>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-700 text-sm">Privacy notice</a>
-              <a href="#" className="text-gray-700 text-sm">Legal</a>
-              <a href="#" className="text-gray-700 text-sm">Cookie settings</a>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-700"><Linkedin size={16} /></a>
-                <a href="#" className="text-gray-700"><Facebook size={16} /></a>
-                <a href="#" className="text-gray-700"><Twitter size={16} /></a>
-                <a href="#" className="text-gray-700"><Instagram size={16} /></a>
-                <a href="#" className="text-gray-700"><Youtube size={16} /></a>
-              </div>
+          
+
+          {/* Right - Social Media Icons */}
+          <div className="flex items-center space-x-4">
+            <a href="#" aria-label="LinkedIn">
+              <Linkedin size={20} className="text-gray-800" />
+            </a>
+            <a href="#" aria-label="Facebook">
+              <Facebook size={20} className="text-gray-800" />
+            </a>
+            <a href="#" aria-label="Twitter">
+              <Twitter size={20} className="text-gray-800" />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <Instagram size={20} className="text-gray-800" />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <Youtube size={20} className="text-gray-800" />
+            </a>
+            <div className="border-l border-gray-300 h-6 mx-2"></div>
+            <div className="flex items-center space-x-1 cursor-pointer">
+              <Globe size={16} className="text-gray-800" />
+              <span className="text-gray-800 font-medium">English</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );
