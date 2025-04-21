@@ -32,7 +32,7 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="max-w-[700px] w-full mx-auto px-4 pt-12 pb-24">
+    <div className="max-w-[700px] w-full mx-auto px-4 pt-12 pb-24 reveal">
       <h1 className="text-[32px] sm:text-[36px] font-bold text-center mb-10 leading-tight tracking-tight text-[#0f0f0f]">
         Frequently asked questions:
       </h1>

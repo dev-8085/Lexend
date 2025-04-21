@@ -6,7 +6,7 @@ import star2 from '../assets/star-2.svg'
 
 export default function GetStarted() {
   return (
-    <div className="relative w-full bg-white py-20 px-4 flex justify-center items-center overflow-hidden">
+    <div className="relative w-full bg-white py-20 px-4 flex justify-center items-center overflow-hidden reveal">
       {/* Left corner illustration */}
       <img 
         src={talking}

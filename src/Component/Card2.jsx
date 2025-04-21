@@ -44,11 +44,11 @@ const cards = [
 const Card2 = () => {
   return (
     <section className="bg-[#F6EEE9] py-16 px-4">
-      <h2 className="text-center text-4xl md:text-5xl font-extrabold text-[#111827] mb-16">
+      <h2 className="text-center text-4xl md:text-5xl font-extrabold text-[#111827] mb-16 reveal">
         Prevent costly mistakes
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto h-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto h-full reveal">
         {cards.map((card, idx) => {
           const isActive = card.alwaysActive;
 

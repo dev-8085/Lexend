@@ -2,7 +2,7 @@ import React from "react";
 
 const Gain = () => {
   return (
-    <div className="bg-[#F6EEE9] p-10">
+    <div className="bg-[#F6EEE9] p-10 reveal">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12">Gain valuable insights</h1>
         

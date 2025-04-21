@@ -4,7 +4,7 @@ function revealSequentially() {
   reveals.forEach((el, index) => {
     setTimeout(() => {
       el.classList.add("active");
-    }, index * 100); // Adjust delay as needed
+    }, index * 50); // Adjust delay as needed
   });
 }
 

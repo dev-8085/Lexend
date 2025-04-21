@@ -43,7 +43,7 @@ const Slide = () => {
       </section>
 
       {/* Features Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 px-4 sm:px-0">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 px-4 sm:px-0 reveal">
         <FeatureCard
           bgColor="#F3ECE6"
           imgWrapperBg="#FAF1C9"

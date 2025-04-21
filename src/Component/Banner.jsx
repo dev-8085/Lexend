@@ -40,7 +40,7 @@ const Banner = () => {
         src={Trophy}
       />
     </div>
-      <div className="absolute bottom-[7%] left-[30%] transform -translate-y-1/2">
+      <div className="absolute bottom-[7%] left-[30%] transform -translate-y-1/2 reveal">
       <img
         alt="icon-globe-dark"
         loading="lazy"
@@ -61,7 +61,7 @@ const Banner = () => {
         src={Crown}
       />
     </div>
-      <div className="absolute -translate-y-1/2 rotate-45 -ms-3 reveal" style={{ top: '35%' }}>
+      <div className="absolute -translate-y-1/2 rotate-45 -ms-3 reveal" style={{ top: '45%' }}>
       {/* Dark Mode Icon */}
       <img
         alt="icon-location-dark"
@@ -73,7 +73,7 @@ const Banner = () => {
         src={location}
       />
     </div>
-      <div className="absolute -rotate-12 -me-3 top-[35%] translate-y-1/2 reveal">
+      <div className="absolute -rotate-12 -me-3 top-[38%] translate-y-1/2 reveal">
         {/* Light Mode Icon */}
         <img
           src={chat}
@@ -119,7 +119,7 @@ const Banner = () => {
       </div>
 
       <div className="max-w-7xl w-full mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-18">
+        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-29">
           {/* Left Text */}
           <div className="py-20 sm:px-1 font-['Inter'] reveal reveal-left">
             <main className="max-w-xl mx-auto">
