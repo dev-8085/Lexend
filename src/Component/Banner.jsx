@@ -85,7 +85,7 @@ const Banner = () => {
         />
         {/* Dark Mode Icon */}
         <img
-          src={chat}
+          src={chat}a
           alt="icon-chat-dark reveal"
           width={100}
           height={100}
@@ -121,7 +121,7 @@ const Banner = () => {
       <div className="max-w-7xl w-full mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-29">
           {/* Left Text */}
-          <div className="py-20 sm:px-1 font-['Inter'] reveal reveal-left">
+          <div className="py-20 font-['Inter'] reveal reveal-left px-4 ">
             <main className="max-w-xl mx-auto">
               <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3 reveal">
                 CRM Tool Workflow
