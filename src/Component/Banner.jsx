@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import hero from '../assets/hero-two.png'; 
 import brand01 from '../assets/brand01.svg';
 import brand02 from '../assets/brand02.svg';
@@ -15,14 +15,94 @@ import global from '../assets/icon-globe.svg';
 import Trophy from '../assets/icon-trophy.svg';
 import star2 from '../assets/star-2.svg';
 
-
 const Banner = () => {
+  const brands = [brand01, brand02, brand03, brand04, brand05, brand06];
+  const sliderRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // Function to handle infinite scroll effect
+  const handleScroll = () => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    // Check if we've scrolled to the end
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+      // Scroll back to first item position (without animation)
+      slider.scrollLeft = 0;
+    }
+    
+    // Check if we've scrolled to the beginning in reverse
+    if (slider.scrollLeft <= 10) {
+      // If scrolling left at beginning, jump to end (for reverse scrolling)
+      const scrollPosition = slider.scrollWidth - slider.clientWidth - 10;
+      if (isDragging && scrollLeft < 10) {
+        slider.scrollLeft = scrollPosition;
+      }
+    }
+  };
+
+  // Start dragging process
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
+  };
+
+  // Start dragging for touch devices
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
+  };
+
+  // Handle dragging movement
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+    sliderRef.current.scrollLeft = scrollLeft - walk;
+    handleScroll(); // Check for infinite scroll
+  };
+
+  // Handle touch movement
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - sliderRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5; // Scroll speed multiplier
+    sliderRef.current.scrollLeft = scrollLeft - walk;
+    handleScroll(); // Check for infinite scroll
+  };
+
+  // Stop dragging process
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Handle mouse leave
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Add event listeners to document
+  useEffect(() => {
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('touchend', handleMouseUp);
+    
+    return () => {
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchend', handleMouseUp);
+    };
+  }, []);
+
   return (
     <div className="relative" style={{ backgroundColor: '#F6EEE9' }}>
-      <div className="absolute top-[12%] right-[15%] transform rotate-45 reveal">
+    {/* Star Icon */}
+    <div className="absolute top-[12%] right-[15%] transform rotate-45 reveal hidden lg:block">
       <img
         alt="star-2"
-        data-uc-svg=""
         loading="lazy"
         width="69"
         height="95"
@@ -30,7 +110,9 @@ const Banner = () => {
         src={star2}
       />
     </div>
-      <div className="absolute top-[15%] left-[35%] transform -rotate-12 reveal">
+  
+    {/* Trophy Icon */}
+    <div className="absolute top-[15%] left-[35%] transform -rotate-12 reveal hidden lg:block">
       <img
         alt="icon-trophy-dark"
         loading="lazy"
@@ -40,7 +122,9 @@ const Banner = () => {
         src={Trophy}
       />
     </div>
-      <div className="absolute bottom-[7%] left-[30%] transform -translate-y-1/2 reveal">
+  
+    {/* Globe Icon */}
+    <div className="absolute bottom-[2%] left-[30%] transform -translate-y-1/2 reveal hidden lg:block">
       <img
         alt="icon-globe-dark"
         loading="lazy"
@@ -50,7 +134,9 @@ const Banner = () => {
         src={global}
       />
     </div>
-      <div className="absolute rotate-45 reveal" style={{ bottom: '20%', right: '8%' }}>
+  
+    {/* Crown Icon */}
+    <div className="absolute rotate-45 reveal hidden lg:block" style={{ bottom: '20%', right: '8%' }}>
       <img
         alt="icon-crown-dark"
         loading="lazy"
@@ -61,8 +147,9 @@ const Banner = () => {
         src={Crown}
       />
     </div>
-      <div className="absolute -translate-y-1/2 rotate-45 -ms-3 reveal" style={{ top: '45%' }}>
-      {/* Dark Mode Icon */}
+  
+    {/* Location Icon */}
+    <div className="absolute -translate-y-1/2 rotate-45 -ms-3 reveal hidden lg:block" style={{ top: '45%' }}>
       <img
         alt="icon-location-dark"
         loading="lazy"
@@ -73,51 +160,53 @@ const Banner = () => {
         src={location}
       />
     </div>
-      <div className="absolute -rotate-12 -me-3 top-[38%] translate-y-1/2 reveal">
-        {/* Light Mode Icon */}
-        <img
-          src={chat}
-          alt="icon-chat"
-          width={100}
-          height={100}
-          className="w-12 xl:w-14 block dark:hidden"
-          style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
-        />
-        {/* Dark Mode Icon */}
-        <img
-          src={chat}a
-          alt="icon-chat-dark reveal"
-          width={100}
-          height={100}
-          className="w-12 xl:w-14 hidden dark:block"
-          style={{ color: 'transparent', transform: 'translateX(0px) translateY(0.0097341px)', opacity: 0.999797 }}
-        />
-      </div>
-
-      {/* Diamond Icons */}
-      <div className="absolute top-[60%] right-[48%] -translate-y-1/2 -rotate-12 reveal">
-        <img
-          alt="icon-diamond"
-          loading="lazy"
-          width="100"
-          height="100"
-          decoding="async"
-          className="w-[48px] xl:w-[56px] block dark:hidden"
-          style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
-          src={diamond}
-        />
-        <img
-          alt="icon-diamond-dark"
-          loading="lazy"
-          width="100"
-          height="100"
-          decoding="async"
-          className="w-[48px] xl:w-[56px] hidden dark:block"
-          style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
-          src={diamondDark}
-        />
-      </div>
-
+  
+    {/* Chat Icons */}
+    <div className="absolute -rotate-12 -me-3 top-[38%] translate-y-1/2 reveal hidden lg:block">
+      {/* Light Mode */}
+      <img
+        src={chat}
+        alt="icon-chat"
+        width={100}
+        height={100}
+        className="w-12 xl:w-14 block dark:hidden"
+        style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
+      />
+      {/* Dark Mode */}
+      <img
+        src={chat}
+        alt="icon-chat-dark reveal"
+        width={100}
+        height={100}
+        className="w-12 xl:w-14 hidden dark:block"
+        style={{ color: 'transparent', transform: 'translateX(0px) translateY(0.0097341px)', opacity: 0.999797 }}
+      />
+    </div>
+  
+    {/* Diamond Icons */}
+    <div className="absolute top-[60%] right-[48%] -translate-y-1/2 -rotate-12 reveal hidden lg:block">
+      <img
+        alt="icon-diamond"
+        loading="lazy"
+        width="100"
+        height="100"
+        decoding="async"
+        className="w-[48px] xl:w-[56px] block dark:hidden"
+        style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
+        src={diamond}
+      />
+      <img
+        alt="icon-diamond-dark"
+        loading="lazy"
+        width="100"
+        height="100"
+        decoding="async"
+        className="w-[48px] xl:w-[56px] hidden dark:block"
+        style={{ color: 'transparent', transform: 'translateX(0px) translateY(0px)', opacity: 1 }}
+        src={diamondDark}
+      />
+    </div>
+  
       <div className="max-w-7xl w-full mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-29">
           {/* Left Text */}
@@ -165,21 +254,55 @@ const Banner = () => {
         </div>
       </div>
 
-    {/* Bottom Icons */}
-<section className="brands panel overflow-hidden opacity-50 py-6">
-  <div className="flex justify-center mb-20 flex-wrap gap-12 bottom-icons reveal reveal-icons active">
-    {[brand01, brand02, brand03, brand04, brand05, brand06].map((icon, index) => (
-      <div key={index} className="flex items-center justify-center mx-6">
-        <img
-          src={icon}
-          alt={`brand-${index + 1}`}
-          className="h-20 w-[130px] object-contain transition-transform duration-300 "
-        />
-      </div>
-    ))}
-  </div>
-</section>
-
+      {/* Bottom Icons - Now with draggable slider that repeats */}
+      <section className="brands panel overflow-hidden opacity-50 py-6">
+        <div 
+          className="max-w-7xl mx-auto relative"
+        >
+          <div
+            ref={sliderRef}
+            className={`flex justify-start mb-5 overflow-x-auto scrollbar-hide  d-flex justify-content space-evenly ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            style={{ 
+              scrollBehavior: isDragging ? 'auto' : 'smooth',
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              paddingBottom: '20px'
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleMouseUp}
+          >
+            {/* First set of brands (visible initially) */}
+            {brands.map((icon, index) => (
+              <div key={index} className="flex items-center justify-center mx-9 flex-none">
+                <img
+                  src={icon}
+                  alt={`brand-${index + 1}`}
+                  className="h-20 w-[130px] object-contain transition-transform duration-300"
+                  style={{ pointerEvents: isDragging ? 'none' : 'auto' }}
+                />
+              </div>
+            ))}
+            
+            {/* Clone of the brands (for continuous scrolling) */}
+            {brands.map((icon, index) => (
+              <div key={`clone-${index}`} className="flex items-center justify-center mx-6 flex-none">
+                <img
+                  src={icon}
+                  alt={`brand-${index + 1}`}
+                  className="h-20 w-[130px] object-contain transition-transform duration-300"
+                  style={{ pointerEvents: isDragging ? 'none' : 'auto' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

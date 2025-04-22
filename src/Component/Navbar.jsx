@@ -4,6 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaGlobe, FaChevronDown } from "react-icons/fa";
 import Logo from "../assets/logo.svg";
+import CallbackForm from "../Component/callback";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,11 +16,9 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Track scroll direction
+      
       setShowNavbar(currentScrollY < lastScrollY || currentScrollY <= 0);
       setLastScrollY(currentScrollY);
-
-      // Detect if page has been scrolled at all
       setIsScrolled(currentScrollY > 0);
     };
 
@@ -67,7 +66,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <ul className="hidden lg:flex">
-            <Link to="/demo" className="font-semibold text-sm md:text-base">
+            <Link to="/demo" onClick={CallbackForm} className="font-semibold text-sm md:text-base">
               Request a demo
             </Link>
           </ul>
