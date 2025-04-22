@@ -22,9 +22,7 @@ function App() {
       <Gain />
       <Getter />
       <Footer/>
-      
-     
-    </>
+          </>
   )
 }
 
