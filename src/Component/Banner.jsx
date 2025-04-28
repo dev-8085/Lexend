@@ -149,7 +149,7 @@ const Banner = () => {
           </div>
 
           <div className="col-12 lg:col-2 xl:col-7 right-image reveal reveal-right flex justify-center items-center">
-            <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Illustration of a team collaborating" className="w-200 h-auto hero-scene panel rtl:me-6 rtl:ms-n6 reveal" />
+            <img src={hero} alt="Illustration of a team collaborating" className="w-200 h-auto hero-scene panel rtl:me-6 rtl:ms-n6 reveal" />
           </div>
         </div>
       </div>
