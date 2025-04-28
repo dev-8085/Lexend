@@ -1,8 +1,8 @@
 import React from 'react';
 import { Linkedin, Facebook, Twitter, Instagram, Youtube, Globe } from 'lucide-react';
-import logo from '../assets/logo-mark.svg';
-import appstor from '../assets/appstore.svg';
-import playstore from '../assets/playstore.svg';
+import logo from '/logo-mark.svg';
+import appstor from '/appstore.svg';
+import playstore from '/playstore.svg';
 
 // A fully responsive footer that preserves your original design
 export default function Footer() {

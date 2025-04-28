@@ -1,7 +1,7 @@
 import React from "react";
-import Feature01 from "../assets/feature01.svg";
-import Feature02 from "../assets/feature02.svg";
-import Feature03 from "../assets/feature03.svg";
+import Feature01 from "/feature01.svg";
+import Feature02 from "/feature02.svg";
+import Feature03 from "/feature03.svg";
 
 // ✅ Reusable FeatureCard component
 const FeatureCard = ({ bgColor, imgWrapperBg, imgSrc, title, description, link }) => {

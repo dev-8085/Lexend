@@ -1,19 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
-import hero from '../assets/hero-two.png'; 
-import brand01 from '../assets/brand01.svg';
-import brand02 from '../assets/brand02.svg';
-import brand03 from '../assets/brand03.svg';
-import brand04 from '../assets/brand04.svg';
-import brand05 from '../assets/brand05.svg';
-import brand06 from '../assets/brand06.svg';
-import diamond from '../assets/icon-diamond.svg';
-import diamondDark from '../assets/icon-diamond-dark.svg';
-import chat from '../assets/icon-chat.svg';
-import location from '../assets/icon-location.svg';
-import Crown from '../assets/icon-crown.svg'; 
-import global from '../assets/icon-globe.svg';
-import Trophy from '../assets/icon-trophy.svg';
-import star2 from '../assets/star-2.svg';
+import hero from    '/hero-two.png'; 
+import brand01 from '/brand01.svg';
+import brand02 from '/brand02.svg';
+import brand03 from '/brand03.svg';
+import brand04 from '/brand04.svg';
+import brand05 from '/brand05.svg';
+import brand06 from '/brand06.svg';
+import diamond from '/icon-diamond.svg';
+import diamondDark from '/icon-diamond-dark.svg';
+import chat from    '/icon-chat.svg';
+import location from '/icon-location.svg';
+import Crown from   '/icon-crown.svg'; 
+import global from  '/icon-globe.svg';
+import Trophy from  '/icon-trophy.svg';
+import star2 from   '/star-2.svg';
 
 const Banner = () => {
   const brands = [brand01, brand02, brand03, brand04, brand05, brand06];

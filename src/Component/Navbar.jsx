@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaGlobe, FaChevronDown } from "react-icons/fa";
-import Logo from "../assets/logo.svg";
+import Logo from "/logo.svg";
 import CallbackForm from "../Component/callback";
 
 const Navbar = () => {

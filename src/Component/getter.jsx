@@ -1,8 +1,8 @@
 import React from 'react';
-import talking from '../assets/talking.svg';
-import chatting from '../assets/chatting.svg';
-import star1 from '../assets/star-1.svg';
-import star2 from '../assets/star-2.svg';
+import talking from '/talking.svg';
+import chatting from '/chatting.svg';
+import star1 from '/star-1.svg';
+import star2 from '/star-2.svg';
 
 export default function GetStarted() {
   return (
