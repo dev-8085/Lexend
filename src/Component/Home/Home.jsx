@@ -4,9 +4,9 @@ import Card from '../Card'
 import Card2 from '../Card2'
 import Card3 from '../Card3'
 import Question from '../Question'
-import Client from '../Client'
 import Gain from '../Gain'
 import Getter from '../getter'
+import Client from '../Client'
 
 
 const Home = () => {
