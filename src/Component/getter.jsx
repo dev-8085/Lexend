@@ -4,7 +4,7 @@ import chatting from '/chatting.svg';
 import star1 from '/star-1.svg';
 import star2 from '/star-2.svg';
 
-export default function GetStarted() {
+export default function Getter() {
   return (
     <div className="relative w-full bg-white py-12 md:py-22 px-4 flex justify-center items-center overflow-hidden reveal">
       {/* Left corner illustration - hidden on small screens */}

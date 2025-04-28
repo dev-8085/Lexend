@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Plus, X } from 'lucide-react';
 
-export default function FAQAccordion() {
+export default function Question() {
   const [openItem, setOpenItem] = useState(null);
 
   const faqItems = [

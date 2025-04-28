@@ -1,29 +1,22 @@
-import Banner from './Component/Banner'
-import Card from './Component/Card'
-import Card2 from './Component/Card2'
-import Card3 from './Component/Card3'
-import Navbar from './Component/Navbar'
-import Question from './Component/Question'
-import Client from './Component/client'
-import Gain from './Component/Gain' 
-import Getter from './Component/getter'
 import Footer from './Component/footer'
+import Home from './Component/Home/Home';
+import Navbar from './Component/Navbar'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Banner />
-      <Card />
-      <Card2 />
-      <Card3 />
-      <Question />
-      <Client />
-      <Gain />
-      <Getter />
+    <Router>
+      <Navbar/>
+      <Routes>
+      <Route path='/' element={<Home/>}>
+
+      </Route>
+      </Routes>
       <Footer/>
-          </>
+    </Router> {/* Fixed the closing tag */}
+    </>
   )
 }
 
-export default App
+export default App;

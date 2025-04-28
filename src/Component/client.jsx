@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Zap, Box, Lock } from 'lucide-react';
 
-export default function TestimonialsSection() {
+export default function Client() {
   const testimonials = [
     {
       company: "Boltshift",

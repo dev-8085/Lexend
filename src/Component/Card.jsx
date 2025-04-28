@@ -28,7 +28,7 @@ const FeatureCard = ({ bgColor, imgWrapperBg, imgSrc, title, description, link }
   );
 };
 
-const Slide = () => {
+const Card = () => {
   return (
     <main className="bg-white text-gray-700 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       {/* Top Heading Section */}
@@ -73,4 +73,4 @@ const Slide = () => {
   );
 };
 
-export default Slide;
+export default Card;
