@@ -5,8 +5,8 @@ import Card2 from '../Card2'
 import Card3 from '../Card3'
 import Question from '../Question'
 import Gain from '../Gain'
-import Getter from '../Getter'
 import Client from '../Client'
+import Getter from '../getter'
 
 
 
