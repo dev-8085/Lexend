@@ -1,10 +1,12 @@
+import { q } from "framer-motion/client";
+
 function revealSequentially() {
   const reveals = document.querySelectorAll(".reveal");
 
   reveals.forEach((el, index) => {
     setTimeout(() => {
       el.classList.add("active");
-    }, index * 50); // Adjust delay as needed
+    }, index * 0); // Adjust delay as needed
   });
 }
 
