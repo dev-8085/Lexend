@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Zap, Box, Lock } from 'lucide-react';
 
-export default function Client() {
+export default function client() {
   const testimonials = [
     {
       company: "Boltshift",
