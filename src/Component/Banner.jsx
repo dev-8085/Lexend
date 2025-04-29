@@ -124,13 +124,13 @@ const Banner = () => {
           <div className="py-24 px-1 fade-up">
             <main className="max-w-xl mx-auto">
               <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3 fade-up">
-                CRM Tool Workflow
+              India's #1 
               </h2>
-              <h1 className="font-extrabold text-[2.75rem] sm:text-[4.25rem] leading-[1.1] text-black mb-6 tracking-tight fade-up">
-                Streamline your<br />Tool Workflow.
+              <h1 className="font-extrabold text-[2.75rem] sm:text-[2.75rem] leading-[1.1] text-black mb-6 tracking-tight fade-up">
+               E-commerce Website <br /> & App Development Company
               </h1>
               <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl fade-up">
-                Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
+           Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl fade-up">
                 <input
