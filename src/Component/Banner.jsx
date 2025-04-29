@@ -121,11 +121,11 @@ const Banner = () => {
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between gy-4 sm:gy-6 gx-0 pt-29">
           <div className="py-20 font-['Inter'] reveal reveal-left px-4">
             <main className="max-w-xl mx-auto">
-              <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3 reveal">CRM Tool Workflow</h2>
+              <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3">CRM Tool Workflow</h2>
               <h1 className="font-extrabold text-[2.75rem] sm:text-[4.25rem] leading-[1.1] text-black mb-6 tracking-tight reveal">
                 Streamline your<br />Tool Workflow.
               </h1>
-              <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl reveal">
+              <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl ">
                 Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
               </p>
 

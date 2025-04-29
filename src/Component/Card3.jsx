@@ -3,28 +3,28 @@ import { Check } from 'lucide-react';
 const Card3 = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 font-sans">
-      <div className="text-center mb-16 reveal">
+      <div className="text-center mb-16">
         <h1 className="text-5xl font-bold mb-4 text-gray-900">Simple, scalable pricing.</h1>
         <p className="text-xl text-gray-600">No extra charges. No hidden fees.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
   {/* Essentials Card */}
-  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col reveal">
+  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col ">
     <h2 className="text-2xl font-bold mb-2 text-gray-900">Essentials</h2>
     <p className="text-base text-gray-600 mb-6">For creating impressive tools that generate results.</p>
 
     <div className="mb-6">
-      <h3 className="text-4xl font-bold text-gray-900 reveal">$19 USD</h3>
+      <h3 className="text-4xl font-bold text-gray-900 ">$19 USD</h3>
       <p className="text-sm text-gray-600">Seat per month, 2 seats max</p>
     </div>
 
-    <button className="w-full bg-[#13715B] hover:bg-[#0E614D] text-white py-3 rounded-lg mb-2 font-medium transition-colors reveal">
+    <button className="w-full bg-[#13715B] hover:bg-[#0E614D] text-white py-3 rounded-lg mb-2 font-medium transition-colors">
       Start a free trial
     </button>
-    <p className="text-gray-500 text-center text-sm mb-6 reveal">No credit card required</p>
+    <p className="text-gray-500 text-center text-sm mb-6 ">No credit card required</p>
 
-    <h4 className="font-semibold text-base mb-3 text-gray-900 reveal">Key features:</h4>
+    <h4 className="font-semibold text-base mb-3 text-gray-900">Key features:</h4>
     <ul className="space-y-2 mt-auto">
       <li className="flex items-start">
         <Check className="text-green-600 mr-2 mt-1" size={18} />
@@ -50,24 +50,24 @@ const Card3 = () => {
   </div>
 
   {/* Business Card */}
-  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col relative reveal">
-    <div className="absolute top-0 right-0 bg-[#13715B] text-white text-xs font-medium py-1 px-3 rounded-bl-lg rounded-tr-lg reveal">
+  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col relative">
+    <div className="absolute top-0 right-0 bg-[#13715B] text-white text-xs font-medium py-1 px-3 rounded-bl-lg rounded-tr-lg">
       Popular
     </div>
-    <h2 className="text-2xl font-bold mb-2 text-gray-900 reveal">Business</h2>
-    <p className="text-base text-gray-600 mb-6 reveal">For seamless integrations and sending tools in bulk.</p>
+    <h2 className="text-2xl font-bold mb-2 text-gray-900 ">Business</h2>
+    <p className="text-base text-gray-600 mb-6">For seamless integrations and sending tools in bulk.</p>
 
     <div className="mb-6 reveal">
       <h3 className="text-4xl font-bold text-gray-900">$49 USD</h3>
       <p className="text-sm text-gray-600">Seat cost per month</p>
     </div>
 
-    <button className="w-full bg-[#13715B] hover:bg-[#0E614D] text-white py-3 rounded-lg mb-2 font-medium transition-colors reveal">
+    <button className="w-full bg-[#13715B] hover:bg-[#0E614D] text-white py-3 rounded-lg mb-2 font-medium transition-colors">
       Start a free trial
     </button>
-    <p className="text-gray-500 text-center text-sm mb-6 reveal">No credit card required</p>
+    <p className="text-gray-500 text-center text-sm mb-6">No credit card required</p>
 
-    <h4 className="font-semibold text-base mb-3 text-gray-900 reveal">Everything in Essentials, plus:</h4>
+    <h4 className="font-semibold text-base mb-3 text-gray-900">Everything in Essentials, plus:</h4>
     <ul className="space-y-2 mt-auto reveal">
       <li className="flex items-start">
         <Check className="text-green-600 mr-2 mt-1" size={18} />
@@ -93,7 +93,7 @@ const Card3 = () => {
   </div>
 
   {/* Enterprise Card */}
-  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col reveal">
+  <div className="bg-[#F6EEE9] border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow min-h-[600px] flex flex-col">
     <h2 className="text-2xl font-bold mb-2 text-gray-900">Enterprise</h2>
     <p className="text-base text-gray-600 mb-6">For large companies with complex Tool workflows.</p>
 
@@ -102,7 +102,7 @@ const Card3 = () => {
       <p className="text-sm text-gray-600">Per-seat or per-tool pricing</p>
     </div>
 
-    <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg mb-2 font-medium transition-colors reveal">
+    <button className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-lg mb-2 font-medium transition-colors ">
       Contact sales
     </button>
     <p className="text-gray-500 text-center text-sm mb-6 reveal">Respond within 24 hrs max</p>
