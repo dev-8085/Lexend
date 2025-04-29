@@ -4,9 +4,10 @@ import Card from '../Card';
 import Card2 from '../Card2';
 import Card3 from '../Card3';
 import Question from '../Question';
-import Gain from '../Gain';
 import Client from '../Client';
 import Price from '../Price';
+import Gain from '../Gain';
+
 
 const Home = () => {
   return (
@@ -17,8 +18,8 @@ const Home = () => {
       <Card3 />
       <Question />
       <Client />
-      <Gain />
-      <Price />
+      <Gain/>
+      <Price/>
     </>
   );
 };
