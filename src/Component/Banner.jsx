@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import hero from '/hero-two.png';
+import hero from './assets/hero-two.png';
 import brand01 from '/brand01.svg';
 import brand02 from '/brand02.svg';
 import brand03 from '/brand03.svg';
