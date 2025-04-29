@@ -1,22 +1,18 @@
-import Footer from './Component/footer'
+import Footer from './Component/footer';
 import Home from './Component/Home/Home';
-import Navbar from './Component/Navbar'
+import Navbar from './Component/Navbar';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
     <Router>
-      <Navbar/>
+      <Navbar />
       <Routes>
-      <Route path='/' element={<Home/>}>
-
-      </Route>
+        <Route path='/' element={<Home />} />
       </Routes>
-      <Footer/>
-    </Router> {/* Fixed the closing tag */}
-    </>
-  )
+      <Footer />
+    </Router>
+  );
 }
 
 export default App;
