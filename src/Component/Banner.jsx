@@ -130,7 +130,7 @@ const Banner = () => {
                E-commerce Website <br /> & App Development Company
               </h1>
               <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl fade-up">
-           Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
+              Build Stunning E-commerce Websites & Apps That Sell — Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl fade-up">
                 <input
