@@ -7,7 +7,7 @@ import playstore from '../assets/playstore.svg';
 // A fully responsive footer that preserves your original design
 export default function Footer() {
   return (
-    <footer className="bg-white pt-10">
+    <footer className="bg-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Divider */}
         <hr className="border-gray-200 mb-8" />
