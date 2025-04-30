@@ -1,48 +1,52 @@
 import { Star } from "lucide-react";
-import stipe     from '../assets/stipe.svg'
+import stipe    from '../assets/stipe.svg'
 import bitbucket from '../assets/bitbucket.svg'
 import zapier    from '../assets/zapier.svg'
+import asana    from '../assets/asana.svg'
+import Drive    from '../assets/drive.svg'
+import mailchimp from '../assets/mailchimp.svg'
 
 export default function PricingHero() {
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-white overflow-hidden">
-      {/* Background dotted circles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[140, 110, 80].map((size, i) => (
-          <svg
-            key={i}
-            className="absolute"
-            style={{
-              width: `${size}%`,
-              height: `${size}%`,
-              top: `${(100 - size) / 2}%`,
-              left: `${(100 - size) / 2}%`,
-            }}
-          >
-            <circle
-              cx="50%"
-              cy="50%"
-              r="49.5%"
-              fill="none"
-              stroke="#E5E7EB"
-              strokeWidth="1"
-              strokeDasharray="3 3"
-            />
-          </svg>
-        ))}
-      </div>
+   <div className="relative w-full min-h-[32rem] flex items-center justify-center bg-white overflow-hidden ">
 
-      {/* Tool icons - Use accurate positioning and real logos */}
-      <img src="" alt="Asana" className="absolute top-[18%] left-[13%] w-12 h-12 rounded-full bg-red-100 p-2" />
-      <img src={stipe} alt="Stripe" className="absolute top-[5%] left-[48%] w-14 h-14 rounded-full bg-purple-100 p-2" />
-      <img src={bitbucket} alt="Bitbucket" className="absolute bottom-[30%] left-[14%] w-14 h-14 rounded-full bg-blue-100 p-2" />
-      <img src={zapier} alt="Zapier" className="absolute top-[20%] right-[15%] w-14 h-14 rounded-full bg-orange-100 p-2" />
-      <div className="absolute bottom-[20%] right-[12%] w-16 h-16 rounded-full bg-yellow-400" />
-      <img src="/icons/google-drive.svg" alt="Google Drive" className="absolute right-[33%] top-[48%] w-10 h-10" />
+  <div className="absolute inset-0 pointer-events-none hidden lg:block">
+  {[140, 110, 80].map((size, i) => (
+    <svg
+      key={i}
+      className="absolute"
+      style={{
+        width: `${size}%`,
+        height: '130%',
+        top: 0,
+        left: `${(100 - size) / 2}%`,
+      }}
+    >
+      <circle
+        cx="50%"
+        cy="40%"
+        r="36%" 
+        fill="none"
+        stroke="#E0E0E0"
+        strokeWidth="1"
+        strokeDasharray="4 3"
+      />
+    </svg>
+  ))}
+</div>
+
+  
+  
+  <img src={asana} alt="Asana" className="hidden lg:block absolute top-[34%] left-[12%] w-11 h-11 rounded-full bg-red-100 p-2" />
+<img src={stipe} alt="Stripe" className="hidden lg:block absolute top-[15%] left-[28%] w-14 h-14 rounded-full bg-purple-100 p-2" />
+<img src={bitbucket} alt="Bitbucket" className="hidden lg:block absolute bottom-[25%] left-[19%] w-14 h-14 rounded-full bg-blue-100 p-2" />
+<img src={zapier} alt="Zapier" className="hidden lg:block absolute top-[20%] right-[20%] w-14 h-14 rounded-full bg-orange-100 p-2" />
+<img src={Drive} alt="Drive" className="hidden lg:block absolute top-[70%] left-[70%] w-14 h-14 rounded-full bg-purple-100 p-2" />
+<img src={mailchimp} alt="Mailchimp" className="hidden lg:block absolute top-[50%] left-[85%] w-14 h-14 rounded-full bg-purple-100 p-2" />
 
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-4xl px-4">
-        <div className="inline-block px-4 py-2 bg-white rounded-full mb-4 shadow">
+        <div className="inline-block px-4 py-2 bg-white rounded-full mb-5 shadow mt-4">
           <span className="text-gray-800 font-medium">Get started today!</span>
         </div>
 
