@@ -1,101 +1,36 @@
-import React from "react";
+import React from 'react';
+import charts from '../assets/charts.svg';
 
 const Gain = () => {
   return (
-    <div className="bg-[#F6EEE9] px-4 py-12 sm:px-6 lg:px-8 ">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-12">
-          Gain valuable insights
-        </h1>
+    <div className="bg-[#f7efea] px-6 md:px-14 py-16 rounded-2xl max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Left Side */}
+        <div className="max-w-xl text-center md:text-left">
+          <h2 className="text-[32px] md:text-[45px] leading-[1.2] font-extrabold text-black mb-8">
+            Create stunning websites<br />
+            that fits your needs.
+          </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Card Template */}
-          {[
-            {
-              tag: "Strategy",
-              title: "Top 5 reasons to invest in marketing",
-              image:
-                "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400",
-              author: "David",
-              authorImage: "https://randomuser.me/api/portraits/men/32.jpg",
-              date: "Apr 3, 2024",
-            },
-            {
-              tag: "Marketing",
-              title: "How can marketing help your business?",
-              image:
-                "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400",
-              author: "Allen",
-              authorImage: "https://randomuser.me/api/portraits/men/44.jpg",
-              date: "Apr 3, 2024",
-            },
-            {
-              tag: "Business",
-              title: "The ultimate guide to marketing success",
-              image:
-                "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400",
-              author: "Kevin",
-              authorImage: "https://randomuser.me/api/portraits/men/22.jpg",
-              date: "Apr 1, 2024",
-            },
-          ].map((card, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col"
-            >
-              <div className="relative">
-                <div className="bg-[#13715B] text-white px-3 py-1 absolute top-4 left-4 z-10 text-xs sm:text-sm rounded">
-                  {card.tag}
-                </div>
-                <div className="h-48 sm:h-56 overflow-hidden border border-gray-200 mx-4 mt-4 rounded-md">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                </div>
-              </div>
-              <div className="p-4 sm:p-6 flex flex-col justify-between flex-grow">
-                <h2 className="text-lg sm:text-xl font-semibold text-center mb-6">
-                  {card.title}
-                </h2>
-                <div className="flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-gray-300 mr-2 overflow-hidden">
-                    <img
-                      src={card.authorImage}
-                      alt={card.author}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="font-medium mr-2">{card.author}</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-gray-500 ml-2">{card.date}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+          <div>
+            <button className="w-full bg-[#176e57] hover:bg-[#145c4a] text-white text-base font-medium py-4 px-6 rounded transition-colors">
+              Try Lexend today
+            </button>
+
+            <p className="text-sm text-gray-500 mt-3">
+              14-day trial, no credit card required.
+            </p>
+          </div>
         </div>
 
-        <div className="text-center mt-10">
-          <a
-            href="#"
-            className="text-green-700 font-medium inline-flex items-center hover:underline"
-          >
-            View more articles
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </div>
+        {/* Right Side */}
+<div className="flex justify-center hidden md:block">
+  <img
+    src={charts}
+    alt="Chart with arrow showing growth"
+    className="w-[220px] md:w-[280px] h-auto"
+  />
+</div>
       </div>
     </div>
   );
