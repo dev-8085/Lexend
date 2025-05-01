@@ -7,6 +7,7 @@ import zapier from "../assets/zapier.svg";
 import AWS    from "../assets/AWS.png"
 import Drive from "../assets/motorbike.png";
 import mailchimp from "../assets/mailchimp.svg";
+import star     from "../assets/05.svg"
 
 export default function PricingHero() {
   const trustRef = useRef(null);
@@ -139,26 +140,33 @@ export default function PricingHero() {
           Start your free trial
         </button>
 
-        {/* Trustpilot */}
-        <div
-          ref={trustRef}
-          className="flex items-center justify-center gap-2 flex-wrap"
-        >
-          <span className="text-gray-800 font-medium">Excellent</span>
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="bg-teal-600 p-0.5">
-                <Star size={16} fill="white" color="white" />
-              </div>
-            ))}
-          </div>
-          <span className="text-gray-800">1,000+ reviews on</span>
-          <span className="flex items-center">
-            <Star size={16} fill="black" color="black" />
-            <span className="font-bold ml-1">Trustpilot</span>
-          </span>
+       {/* Trustpilot */}
+<div
+  ref={trustRef}
+  className="flex flex-col sm:flex-row items-center justify-center gap-2 flex-wrap"
+>
+  {/* Top row - Rating and stars */}
+  <div className="flex items-center gap-2">
+    <span className="text-gray-800 font-medium">Excellent</span>
+    <div className="flex">
+      {[...Array(5)].map((_, i) => (
+        <div key={i} className="bg-teal-600 p-0.5">
+          <Star size={16} fill="white" color="white" />
         </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Bottom row - Reviews text and logo */}
+  <div className="flex items-center gap-2">
+    <span className="text-gray-800">1,000+ reviews on</span>
+    <span className="flex items-center">
+      <img src={star} alt="star" width={95} height={80} className="text-green-500" />
+    </span>
+  </div>
+</div>
       </div>
     </div>
   );
 }
+
