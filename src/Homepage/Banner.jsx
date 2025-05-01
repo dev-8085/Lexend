@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import hero from '../assets/hero-two.png';
-import brand01 from '../assets/brand01.svg';
-import brand02 from '../assets/brand02.svg';
-import brand03 from '../assets/brand03.svg';
-import brand04 from '../assets/brand04.svg';
-import brand05 from '../assets/brand05.svg';
-import brand06 from '../assets/brand06.svg';
+import brand01 from '../assets/c2.svg';
+import brand02 from '../assets/c4.svg';
+import brand03 from '../assets/c12.svg';
+import brand04 from '../assets/gov1.svg';
+import brand05 from '../assets/kal.svg';
+import brand06 from '../assets/maimi.svg';
+import brand07 from '../assets/mil.svg';
 import diamond from '../assets/icon-diamond.svg';
 import diamondDark from '../assets/icon-diamond-dark.svg';
 import chat from '../assets/icon-chat.svg';
@@ -38,7 +39,7 @@ const Banner = () => {
     );
   }, []);
 
-  const brands = [brand01, brand02, brand03, brand04, brand05, brand06];
+  const brands = [brand01, brand02, brand03, brand04, brand05, brand06, brand07];
 
   // Drag logic
   const handleScroll = () => {
@@ -133,12 +134,16 @@ const Banner = () => {
               Build Stunning E-commerce Websites & Apps That Sell — Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl fade-up">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
-                  required
-                />
+              <input
+              type="text"
+             placeholder="Your Phone"
+             className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
+             required
+             onInput={(e) => {
+             e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+              }}
+             />
+
                 <button
                   type="submit"
                   className="bg-[#0E614D] text-white font-medium text-base sm:text-lg rounded-md px-6 py-4 hover:bg-[#16503b] transition-colors"
@@ -146,7 +151,6 @@ const Banner = () => {
                   Start free trial
                 </button>
               </form>
-              <p className="text-gray-600 text-sm mt-4 fade-up">No credit card required.</p>
             </main>
           </div>
 
@@ -157,39 +161,40 @@ const Banner = () => {
       </div>
 
       {/* Brands Carousel */}
-      <section className="brands panel overflow-hidden opacity-50 py-6">
-        <div className="max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8">
-          <div
-            ref={sliderRef}
-            className={`flex justify-start mb-5 overflow-x-auto scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-            style={{
-              scrollBehavior: isDragging ? 'auto' : 'smooth',
-              WebkitOverflowScrolling: 'touch',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              paddingBottom: '20px',
-            }}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {brands.concat(brands).map((icon, index) => (
-              <div key={index} className="flex items-center justify-center mx-6 flex-none">
-                <img
-                  src={icon}
-                  alt={`brand-${index + 1}`}
-                  className="h-20 w-[130px] object-contain transition-transform duration-300"
-                  style={{ pointerEvents: isDragging ? 'none' : 'auto' }}
-                />
-              </div>
-            ))}
-          </div>
+<section className="brands panel overflow-hidden opacity-100 py-6">
+  <div className="max-w-7xl mx-auto relative sm:px-6 lg:px-1">
+    <div
+      ref={sliderRef}
+      className={`flex justify-start mb-5 overflow-x-auto scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+      style={{
+        scrollBehavior: isDragging ? 'auto' : 'smooth',
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        paddingBottom: '20px',
+      }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {brands.concat(brands).map((icon, index) => (
+        <div key={index} className="flex items-center justify-center mx-6 flex-none">
+          <img
+            src={icon}
+            alt={`brand-${index + 1}`}
+            className="h-20 w-[130px] object-contain transition-transform duration-300 brightness-100 contrast-100"
+            style={{ pointerEvents: isDragging ? 'none' : 'auto' }}
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

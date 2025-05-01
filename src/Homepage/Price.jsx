@@ -153,7 +153,7 @@ export default function PricingHero() {
               </div>
             ))}
           </div>
-          <span className="text-gray-800">4,000+ reviews on</span>
+          <span className="text-gray-800">1,000+ reviews on</span>
           <span className="flex items-center">
             <Star size={16} fill="black" color="black" />
             <span className="font-bold ml-1">Trustpilot</span>
