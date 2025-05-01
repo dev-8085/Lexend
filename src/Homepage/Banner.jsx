@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-
 import hero from '../assets/hero-two.png';
 import brand01 from '../assets/c2.svg';
 import brand02 from '../assets/c4.svg';
