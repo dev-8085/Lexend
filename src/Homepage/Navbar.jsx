@@ -63,21 +63,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Callback form */}
-      {showCallback && (
-        <div className="fixed top-20 left-0 w-full z-40 flex justify-center items-start pt-16 pb-4 px-4 bg-black bg-opacity-50 min-h-screen">
-          <div className="relative max-w-md w-full">
-            <button 
-              onClick={() => setShowCallback(false)}
-              className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-md"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <CallbackForm />
-          </div>
-        </div>
+     {/* Callback form */}
+{showCallback && (
+  <div className="fixed top-20 left-0 w-full z-40 flex justify-center items-start pt-16 pb-4 px-4 backdrop-blur-sm min-h-screen">
+    <div className="relative max-w-md w-full">
+      <button 
+        onClick={() => setShowCallback(false)}
+        className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-md"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <CallbackForm />
+    </div>
+  </div>
       )}
     </>
   );

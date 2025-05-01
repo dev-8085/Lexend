@@ -136,7 +136,7 @@ const Banner = () => {
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl fade-up">
               <input
               type="text"
-             placeholder="Your Phone"
+             placeholder="Your Phone Number"
              className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
              required
              onInput={(e) => {

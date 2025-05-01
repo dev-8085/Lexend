@@ -12,10 +12,19 @@ export default function CallbackForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
+
+    if (name === "mobile") {
+      const numericValue = value.replace(/\D/g, "").slice(0, 10); // Allow only digits, max 10
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: numericValue
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -85,6 +94,9 @@ export default function CallbackForm() {
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
                 placeholder="Your phone number"
                 required
+                maxLength={10}
+                inputMode="numeric"
+                pattern="\d*"
               />
             </div>
 

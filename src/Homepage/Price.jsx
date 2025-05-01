@@ -1,12 +1,11 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Star } from "lucide-react";
-
 import stipe from "../assets/stipe.svg";
 import bitbucket from "../assets/bitbucket.svg";
 import zapier from "../assets/zapier.svg";
-import asana from "../assets/asana.svg";
-import Drive from "../assets/drive.svg";
+import AWS    from "../assets/AWS.png"
+import Drive from "../assets/motorbike.png";
 import mailchimp from "../assets/mailchimp.svg";
 
 export default function PricingHero() {
@@ -87,9 +86,9 @@ export default function PricingHero() {
 
       {/* Floating Brand Icons */}
       <img
-        src={asana}
-        alt="Asana"
-        className="hidden lg:block absolute top-[34%] left-[13%] w-11 h-11 rounded-full bg-red-100 p-2"
+        src={AWS}
+        alt="AWS"
+        className="hidden lg:block absolute top-[38%] left-[12%] w-14 h-14 rounded-full bg-red-100 p-2"
       />
       <img
         src={stipe}
