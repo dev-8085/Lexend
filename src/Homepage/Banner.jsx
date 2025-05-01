@@ -1,5 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import { Autoplay } from 'swiper/modules';
+
 import hero from '../assets/hero-two.png';
 import brand01 from '../assets/c2.svg';
 import brand02 from '../assets/c4.svg';
@@ -8,6 +13,7 @@ import brand04 from '../assets/gov1.svg';
 import brand05 from '../assets/kal.svg';
 import brand06 from '../assets/maimi.svg';
 import brand07 from '../assets/mil.svg';
+
 import diamond from '../assets/icon-diamond.svg';
 import diamondDark from '../assets/icon-diamond-dark.svg';
 import chat from '../assets/icon-chat.svg';
@@ -18,12 +24,6 @@ import Trophy from '../assets/icon-trophy.svg';
 import star2 from '../assets/star-2.svg';
 
 const Banner = () => {
-  const sliderRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  // GSAP Animation
   useEffect(() => {
     gsap.killTweensOf('.fade-up');
     gsap.fromTo(
@@ -40,57 +40,6 @@ const Banner = () => {
   }, []);
 
   const brands = [brand01, brand02, brand03, brand04, brand05, brand06, brand07];
-
-  // Drag logic
-  const handleScroll = () => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-      slider.scrollLeft = 0;
-    }
-    if (slider.scrollLeft <= 0) {
-      slider.scrollLeft = slider.scrollWidth - slider.clientWidth;
-    }
-  };
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-    handleScroll();
-  };
-  const handleMouseUp = () => setIsDragging(false);
-  const handleMouseLeave = () => setIsDragging(false);
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-    handleScroll();
-  };
-  const handleTouchEnd = () => setIsDragging(false);
-
-  useEffect(() => {
-    document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('touchend', handleTouchEnd);
-    return () => {
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
 
   return (
     <div className="relative overflow-hidden" style={{ backgroundColor: '#F6EEE9' }}>
@@ -120,30 +69,29 @@ const Banner = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-1 ">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-1">
         <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between pt-16 lg:pt-24">
           <div className="py-24 px-1 fade-up">
             <main className="max-w-xl mx-auto">
               <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3 fade-up">
-              India's #1 
+                India's #1
               </h2>
-              <h1 className="font-extrabold text-[2.30rem]  leading-[1.1] text-black mb-6 tracking-tight fade-up">
-               E-commerce Website <br /> & App Development Company
+              <h1 className="font-extrabold text-[2.30rem] leading-[1.1] text-black mb-6 tracking-tight fade-up">
+                E-commerce Website <br /> & App Development Company
               </h1>
               <p className="text-[#0E0E10] text-base sm:text-lg leading-relaxed mb-8 max-w-3xl fade-up">
-              Build Stunning E-commerce Websites & Apps That Sell — Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
+                Build Stunning E-commerce Websites & Apps That Sell — Trusted by India's Fastest-Growing Brands instead of Keep data consistent, with native CRM integrations that streamline your entire Tool workflow.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl fade-up">
-              <input
-              type="text"
-             placeholder="Your Phone Number"
-             className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
-             required
-             onInput={(e) => {
-             e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
-              }}
-             />
-
+                <input
+                  type="text"
+                  placeholder="Your Phone Number"
+                  className="flex-grow rounded-md border border-gray-300 bg-white px-5 py-4 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#1b5e4a]"
+                  required
+                  onInput={(e) => {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+                  }}
+                />
                 <button
                   type="submit"
                   className="bg-[#0E614D] text-white font-medium text-base sm:text-lg rounded-md px-6 py-4 hover:bg-[#16503b] transition-colors"
@@ -161,40 +109,34 @@ const Banner = () => {
       </div>
 
       {/* Brands Carousel */}
-<section className="brands panel overflow-hidden opacity-100 py-6">
-  <div className="max-w-7xl mx-auto relative sm:px-6 lg:px-1">
-    <div
-      ref={sliderRef}
-      className={`flex justify-start mb-5 overflow-x-auto scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-      style={{
-        scrollBehavior: isDragging ? 'auto' : 'smooth',
-        WebkitOverflowScrolling: 'touch',
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        paddingBottom: '20px',
-      }}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      {brands.concat(brands).map((icon, index) => (
-        <div key={index} className="flex items-center justify-center mx-6 flex-none">
-          <img
-            src={icon}
-            alt={`brand-${index + 1}`}
-            className="h-20 w-[130px] object-contain transition-transform duration-300 brightness-100 contrast-100"
-            style={{ pointerEvents: isDragging ? 'none' : 'auto' }}
-          />
+      <section className="brands panel overflow-hidden opacity-100 py-6">
+        <div className="max-w-7xl mx-auto relative sm:px-6 lg:px-1">
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            loop={true}
+            slidesPerView={2}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              768: { slidesPerView: 4 },
+              1024: { slidesPerView: 5 },
+              1280: { slidesPerView: 6 },
+            }}
+            spaceBetween={30}
+            className="!pb-4"
+          >
+            {brands.map((icon, index) => (
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <img
+                  src={icon}
+                  alt={`brand-${index + 1}`}
+                  className="h-20 w-[130px] object-contain transition-transform duration-300"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
     </div>
   );
 };
