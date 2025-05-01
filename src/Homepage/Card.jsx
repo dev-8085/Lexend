@@ -44,6 +44,30 @@ const Card = () => {
 
       {/* Features Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 px-4 sm:px-0 reveal">
+       <FeatureCard
+          bgColor="#F3ECE6"
+          imgWrapperBg="#FAF1C9"
+          imgSrc={Feature01}
+          title="Share tools quickly and confidently in minutes"
+          description="This powerful tool eliminates the need to leave Salesforce to get things done as I can create a custom proposal with dynamic pricing tables. You can also customize your own dynamic versions."
+        />
+
+        <FeatureCard
+          bgColor="#F3ECE6"
+          imgWrapperBg="#F9E6E0"
+          imgSrc={Feature02}
+          title="Connect every part of your entire business"
+          description="Keep data consistent, with native CRM integrations that streamline your entire Tool workflow."
+          link={{ href: "#", text: "See all integrations →" }}
+        />
+ 
+        <FeatureCard
+          bgColor="#F3ECE6"
+          imgWrapperBg="#D6E3E3"
+          imgSrc={Feature03}
+          title="Maintain compliance and control your apps"
+          description="Improve security and trust with built-in legally binding e-Signatures. Create pre-approved templates, content blocks and lock all legal information to prevent costly mistakes."
+        />
         <FeatureCard
           bgColor="#F3ECE6"
           imgWrapperBg="#FAF1C9"
@@ -60,7 +84,7 @@ const Card = () => {
           description="Keep data consistent, with native CRM integrations that streamline your entire Tool workflow."
           link={{ href: "#", text: "See all integrations →" }}
         />
-
+ 
         <FeatureCard
           bgColor="#F3ECE6"
           imgWrapperBg="#D6E3E3"
