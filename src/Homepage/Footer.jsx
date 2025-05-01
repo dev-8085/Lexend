@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linkedin, Facebook, Twitter, Instagram, Youtube, Globe } from 'lucide-react';
-import logo from '../assets/logo-mark.svg';
+import logo from '../assets/logo.png';
 import appstor from '../assets/appstore.svg';
 import playstore from '../assets/playstore.svg';
 
