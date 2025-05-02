@@ -69,7 +69,7 @@ const Banner = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-1">
-        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between pt-16 lg:pt-24">
+        <div className="flex flex-col md:flex-row items-center justify-center lg:justify-between pt-5 lg:pt-30">
           <div className="py-24 px-1 fade-up">
             <main className="max-w-xl mx-auto">
               <h2 className="text-[#1b5e4a] font-semibold text-sm sm:text-base leading-tight mb-3 fade-up">

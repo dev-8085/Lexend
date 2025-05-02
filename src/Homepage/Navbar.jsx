@@ -33,34 +33,36 @@ const Navbar = () => {
           ${isScrolled ? "bg-white shadow-md" : "bg-[#F6EEE9]"}
         `}
       >
-        <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-12 pt-5">
-          {/* Left Section - Logo */}
-          <div className="flex items-center">
-            <img 
-              src={Logo} 
-              alt="Amazing Web.Design Logo" 
-              className="w-32 sm:w-40 md:w-48 h-auto object-contain" 
-            />
-          </div>
+       <div className="uc-navbar container mx-auto min-h-[4rem] flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-34 pt-5">
+  {/* Left Section - Logo */}
+  <div className="flex items-center">
+    <img 
+      src={Logo} 
+      alt="Amazing Web.Design Logo" 
+      className="w-15 sm:w-50 md:w-15 h-auto object-contain" 
+    />
+  </div>
 
-          {/* Right Section - CTA buttons */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <Link 
-              to="/demo" 
-              className="font-semibold text-sm md:text-base hover:underline"
-            >
-              Request a demo
-            </Link>
-            
-            <button
-              type="button"
-              onClick={() => setShowCallback(!showCallback)}
-              className="text-sm md:text-base font-semibold bg-[#12715B] text-white rounded-lg py-2 md:py-3 px-4 hover:bg-opacity-90"
-            >
-              Start free trial
-            </button>
-          </div>
-        </div>
+  {/* Right Section - CTA buttons */}
+  <div className="flex items-center gap-4 sm:gap-6">
+    {/* Hide "Request a demo" on mobile (below md breakpoint) */}
+    <Link 
+      to="/demo" 
+      className="hidden md:block font-semibold text-sm md:text-base hover:underline"
+    >
+      Request a demo
+    </Link>
+    
+    <button
+      type="button"
+      onClick={() => setShowCallback(!showCallback)}
+      className="text-sm md:text-base font-semibold bg-[#12715B] text-white rounded-lg py-2 md:py-3 px-4 hover:bg-opacity-90"
+    >
+      Start free trial
+    </button>
+  </div>
+</div>
+      
       </div>
 
      {/* Callback form */}
