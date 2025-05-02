@@ -8,7 +8,9 @@ const TermsOfService = () => {
       <section className="mb-10">
         <h2 className="text-2xl font-extrabold mb-2">1. Terms</h2>
         <p className="text-base leading-relaxed">
-          By accessing the website at http://www.amazingweb.design, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
+          By accessing the website at<a href="https://altdesignz.com/" className="text-blue-600 hover:underline ml-1">
+          https://altdesignz.com/
+          </a> you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
         </p>
       </section>
 
