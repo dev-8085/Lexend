@@ -65,13 +65,13 @@ const Navbar = () => {
       
       </div>
 
-     {/* Callback form */}
+{/* Callback form */}
 {showCallback && (
-  <div className="fixed top-20 left-0 w-full z-40 flex justify-center items-start pt-16 pb-4 px-4 backdrop-blur-sm min-h-screen">
-    <div className="relative max-w-md w-full">
+  <div className="fixed top-0 left-0 w-full h-full z-50 flex justify-center items-center p-4 backdrop-blur-sm bg-opacity-30">
+    <div className="relative max-w-5xl w-full"> {/* Changed from max-w-md to max-w-2xl */}
       <button 
         onClick={() => setShowCallback(false)}
-        className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-md"
+        className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
